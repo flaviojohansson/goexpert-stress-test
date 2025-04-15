@@ -17,7 +17,7 @@ var (
 )
 
 var runCmd = &cobra.Command{
-	Use:   "run",
+	Use:   "stress",
 	Short: "Executa o teste de carga",
 	Long:  `Executa um teste de carga contra a URL especificada com os parâmetros fornecidos.`,
 	Run: func(cmd *cobra.Command, args []string) {
