@@ -27,7 +27,7 @@ func GenerateReport(results []result.Result, duration time.Duration) {
 	fmt.Println("\n=== Relatório do Teste de Carga ===")
 	fmt.Printf("Tempo total: %v\n", duration)
 	fmt.Printf("Total de requests: %d\n", totalRequests)
-	fmt.Printf("Requests bem-sucedidos (200): %d (%.2f%%)\n", successCount, float64(successCount)/float64(totalRequests)*100)
+	fmt.Printf("Requests bem-sucedidos (Status 200): %d (%.2f%%)\n", successCount, float64(successCount)/float64(totalRequests)*100)
 
 	fmt.Println("\nDistribuição de Status HTTP:")
 	for status, count := range statusCount {
