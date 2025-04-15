@@ -10,6 +10,12 @@ import (
 
 func RunLoadTest(url string, totalRequests, concurrency int) []result.Result {
 	results := make([]result.Result, totalRequests)
+
+	// TIL: channel de struct{} é chamado de Semaphore pattern, e serve para limitar a concorrência.
+	//
+	// struct{} é o menor tipo possível em Go (ocupa 0 bytes)
+	// Usamos o channel apenas como um semáforo, não para transportar dados
+	// A única informação importante é a presença/ausência de um valor no channel
 	ch := make(chan struct{}, concurrency)
 	var wg sync.WaitGroup
 
