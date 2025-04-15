@@ -12,7 +12,7 @@ docker build -t goexpert-stress-test .
 ```
 3. Executar a aplicação com uma chamada via docker
 ```
-docker run goexpert-stress-test run --url=https://tms.ssw.inf.br --requests=100 --concurrency=10
+docker run goexpert-stress-test stress --url=https://tms.ssw.inf.br --requests=100 --concurrency=10
 
 # https://tms.ssw.inf.br é um bom exemplo pois tem controle de requests por segundo,
 # e retornará além de status 200, 429 (Too Many Requests).
